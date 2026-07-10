@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|e:\\gmg\\github\\gmg-unity-2026-peach\\assets\\gmg scripts\\peach squad\\ingredientholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\ingredientholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\IngredientHolder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\GMG Scripts\\Peach Squad\\IngredientHolder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Unity Projects\\Exploration Game\\Assets\\Scripts\\PreciseTopDownPlayerMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -14,15 +14,15 @@
       "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\unity scripts\\movement\\move.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7817ADE9-DFF8-6F1E-215E-6FB6CA698004}|Assembly-CSharp-Editor.csproj|e:\\gmg\\github\\gmg-unity-2026-peach\\assets\\_internal_\\scripts\\editor\\movement\\movewitharrowsinspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7817ADE9-DFF8-6F1E-215E-6FB6CA698004}|Assembly-CSharp-Editor.csproj|E:\\GMG\\Github\\GMG-Unity-2026-Peach\\assets\\_internal_\\scripts\\editor\\movement\\movewitharrowsinspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7817ADE9-DFF8-6F1E-215E-6FB6CA698004}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\_internal_\\scripts\\editor\\movement\\movewitharrowsinspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|e:\\gmg\\github\\gmg-unity-2026-peach\\assets\\gmg scripts\\peach squad\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|E:\\GMG\\Github\\GMG-Unity-2026-Peach\\assets\\gmg scripts\\peach squad\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|e:\\gmg\\github\\gmg-unity-2026-peach\\assets\\gmg scripts\\combat\\topdownshootprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|E:\\GMG\\Github\\GMG-Unity-2026-Peach\\assets\\gmg scripts\\combat\\topdownshootprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\combat\\topdownshootprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -52,8 +52,7 @@
               "RelativeToolTip": "Assets\\_INTERNAL_\\Scripts\\Editor\\Movement\\MoveWithArrowsInspector.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-10T00:07:00.909Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-10T00:07:00.909Z"
             },
             {
               "$type": "Document",
@@ -65,8 +64,7 @@
               "RelativeToolTip": "Assets\\GMG Scripts\\Combat\\TopDownShootProjectile.cs",
               "ViewState": "AgIAAGYAAAAAAAAAAAAowIwAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T23:30:02.499Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T23:30:02.499Z"
             },
             {
               "$type": "Document",
@@ -78,8 +76,7 @@
               "RelativeToolTip": "..\\..\\..\\Unity Projects\\Battler\\Assets\\Scripts\\BattleSystem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T23:26:24.667Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T23:26:24.667Z"
             },
             {
               "$type": "Document",
@@ -91,8 +88,7 @@
               "RelativeToolTip": "Assets\\GMG Scripts\\Peach Squad\\Inventory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T23:25:19.824Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T23:25:19.824Z"
             },
             {
               "$type": "Document",
@@ -104,8 +100,7 @@
               "RelativeToolTip": "..\\..\\..\\Unity Projects\\Exploration Game\\Assets\\Scripts\\PreciseTopDownPlayerMovement.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAAAAEYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T22:17:50.621Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T22:17:50.621Z"
             },
             {
               "$type": "Document",
@@ -117,8 +112,7 @@
               "RelativeToolTip": "Assets\\GMG Scripts\\GameManager\\InputManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T21:48:03.906Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T21:48:03.906Z"
             },
             {
               "$type": "Document",
@@ -128,10 +122,8 @@
               "RelativeDocumentMoniker": "Assets\\GMG Scripts\\Peach Squad\\IngredientHolder.cs",
               "ToolTip": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\IngredientHolder.cs",
               "RelativeToolTip": "Assets\\GMG Scripts\\Peach Squad\\IngredientHolder.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T21:39:22.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T21:39:22.872Z"
             },
             {
               "$type": "Document",
@@ -143,8 +135,7 @@
               "RelativeToolTip": "Assets\\Unity Scripts\\Movement\\Move.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T21:02:07.663Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T21:02:07.663Z"
             }
           ]
         }
