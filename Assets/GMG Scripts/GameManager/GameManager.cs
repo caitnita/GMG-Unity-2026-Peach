@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
 	{
 		if (gameMgr != null) return gameMgr;
 
-		GameManager[] gameMgrs = Object.FindObjectsOfType(typeof(GameManager)) as GameManager[];
+		GameManager[] gameMgrs = Object.FindObjectsByType(typeof(GameManager),FindObjectsSortMode.None) as GameManager[];
 		foreach (GameManager gameManager in gameMgrs)
 		{
 			gameMgr = gameManager;
