@@ -11,6 +11,8 @@ UserSettings/
 *.tmp
 
 # OS & editor files
+v17/
+FileContentIndex/
 .DS_Store
 Thumbs.db
 .vscode/
