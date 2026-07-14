@@ -11,15 +11,18 @@ public class CustomerManager : MonoBehaviour
 
     public GameObject customerPrefab;
 
-    public List<Customer> normalCustomers;
-    public List<Customer> creepyCustomers;
-    public List<Customer> cursedCustomers;
+    public List<Customer> customers;
+    public List<Ingredient> ingredients;
 
-    public List<Ingredient> ingredientPool;
+    private List<Customer> normalCustomers = new List<Customer>();
+    private List<Customer> creepyCustomers = new List<Customer>();
+    private List<Customer> cursedCustomers = new List<Customer>();
+    private List<Customer> customerPool;
+
+    private List<Ingredient> ingredientPool = new List<Ingredient>();
+    private List<Ingredient> cursedIngredients = new List<Ingredient>();
     private List<Ingredient> requiredIngredients = new List<Ingredient>();
     private List<Ingredient> order = new List<Ingredient>();
-
-    private List<Customer> customerPool;
 
     public GameObject spawn1;
     public GameObject spawn2;
@@ -52,16 +55,46 @@ public class CustomerManager : MonoBehaviour
     {
         DifficultyManager = GetComponent<DifficultyManager>();
 
+        // Duplicate our ingredient list into ingredientPool, so we can edit this list to remove required ingredients and store in a separate list
+        ingredientPool = new List<Ingredient>(ingredients);
+
+        // Check each ingredientPool entry for the isRequired/isCursed bool, and add those flagged ingredients to the requiredIngredients/cursedIngredients lists
         for (int i = 0;i < ingredientPool.Count; i++)
         {
             if (ingredientPool[i].isRequired)
             {
-                Debug.Log("Test");
                 requiredIngredients.Add(ingredientPool[i]);
                 ingredientPool.RemoveAt(i);
                 i--;
             }
+            else if (ingredientPool[i].isCursed)
+            {
+                cursedIngredients.Add(ingredientPool[i]);
+                ingredientPool.RemoveAt(i);
+                i--;
+            }
             else { }
+        }
+
+        // Sort our provided customer list by customer type into separate lists.
+        for (int j = 0; j < customers.Count; j++)
+        {
+            if (customers[j].customerType == 1)
+            {
+                normalCustomers.Add(customers[j]);
+            }
+            else if (customers[j].customerType == 2)
+            {
+                creepyCustomers.Add(customers[j]);
+            }
+            else if (customers[j].customerType == 3)
+            {
+                cursedCustomers.Add(customers[j]);
+            }
+            else
+            {
+                Debug.Log("Incorrect Customer Value on " + customers[j].name);
+            }
         }
 
         Phase1();
@@ -116,8 +149,6 @@ public class CustomerManager : MonoBehaviour
 
     public void Spawn1()
     {
-        Debug.Log("Trying to Spawn1");
-
         // Set the corresponding "occupied" boolean to true, so that we don't keep trying to spawn more customers in the same spot!
         spawn1Occupied = true;
 
@@ -131,7 +162,7 @@ public class CustomerManager : MonoBehaviour
         // and assign the correct spawn location.
         customerController.customer = GetCustomer();
         customerController.spawnLocation = 1f;
-        customerController.order = CreateOrder();
+        customerController.order = CreateOrder(customerController.customer.customerType);
     }
 
     public void Spawn2()
@@ -204,7 +235,7 @@ public class CustomerManager : MonoBehaviour
         Spawn1();
     }
 
-    private List<Ingredient> CreateOrder()
+    private List<Ingredient> CreateOrder(int customerType)
     {
         // Clear any previous order info
         order.Clear();
@@ -212,10 +243,15 @@ public class CustomerManager : MonoBehaviour
         // Set our working ingredient pool back to default
         List<Ingredient> currIngredientPool = new List<Ingredient>(ingredientPool);
 
-        foreach (var item in requiredIngredients)
+        // If customer is cursed type, add cursed ingredients to the ingredient pool.
+        if (customerType == 3)
         {
-            order.Add(item);
+            currIngredientPool.AddRange(cursedIngredients);
         }
+        else { }
+
+        // Add all required items to the order.
+        order.AddRange(requiredIngredients);
 
         for (var i = order.Count; i < orderSize; i++)
         {

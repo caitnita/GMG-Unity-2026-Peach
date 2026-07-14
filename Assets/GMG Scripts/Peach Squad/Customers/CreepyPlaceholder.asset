@@ -15,6 +15,7 @@ MonoBehaviour:
   customerName: Creepy Placeholder
   sprite: {fileID: 2575966596581722498, guid: 8f37f90358adc6141b2f6e8df8d13aba, type: 3}
   animator: {fileID: 0}
+  customerType: 2
   spawnSound: {fileID: 0}
   successSound: {fileID: 0}
   failureSound: {fileID: 0}
