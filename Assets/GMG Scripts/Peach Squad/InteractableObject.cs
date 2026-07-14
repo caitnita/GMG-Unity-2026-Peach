@@ -40,7 +40,9 @@ public class InteractableObject : MonoBehaviour
         {
             if (onPlayer)
             {
-                Action();      
+                Action();
+                // edited
+                Debug.Log("action!!!");      
             }
             else { }
         }
