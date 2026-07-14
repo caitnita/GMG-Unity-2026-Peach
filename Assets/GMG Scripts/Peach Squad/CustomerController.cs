@@ -45,10 +45,6 @@ public class CustomerController : InteractableObject
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // edited
-        Debug.Log(spriteRenderer);
-        Debug.Log(customer.sprite.name);
-
         spriteRenderer.sprite = customer.sprite;
         anim = customer.animator;
 

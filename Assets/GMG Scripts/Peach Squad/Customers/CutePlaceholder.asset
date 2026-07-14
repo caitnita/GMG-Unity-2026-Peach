@@ -15,6 +15,7 @@ MonoBehaviour:
   customerName: Cute Placeholder
   sprite: {fileID: -3558552238673493281, guid: 245d05f7adf2b66479dedd1b12ffc750, type: 3}
   animator: {fileID: 0}
+  customerType: 1
   spawnSound: {fileID: 0}
   successSound: {fileID: 0}
   failureSound: {fileID: 0}

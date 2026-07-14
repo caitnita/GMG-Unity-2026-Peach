@@ -1788,7 +1788,7 @@ GameObject:
   - component: {fileID: 2116123791}
   - component: {fileID: 2116123790}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1835,17 +1835,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerPrefab: {fileID: 2113247840}
-  normalCustomers:
+  customers:
+  - {fileID: 11400000, guid: 30e1102c85895784c93fa8f5ef551e42, type: 2}
   - {fileID: 11400000, guid: 0bc25f6e09ed96540bdaebf44473e9f7, type: 2}
   - {fileID: 11400000, guid: dd0d90a8a48a15e409899a4b5d5a90c3, type: 2}
-  - {fileID: 11400000, guid: 30e1102c85895784c93fa8f5ef551e42, type: 2}
-  creepyCustomers: []
-  cursedCustomers: []
-  ingredientPool:
+  ingredients:
   - {fileID: 11400000, guid: 4532f014d74824448bad58e8138ead1e, type: 2}
   - {fileID: 11400000, guid: 4e05e7fabb41945228bb51997d3175ab, type: 2}
-  - {fileID: 11400000, guid: 26bf1be5556139a458891e56e4e0bf47, type: 2}
   - {fileID: 11400000, guid: efb10b3e4a784492e865c644ef87b488, type: 2}
+  - {fileID: 11400000, guid: 26bf1be5556139a458891e56e4e0bf47, type: 2}
   - {fileID: 11400000, guid: b0dfdeeab11f04eb9ab8b4d5ebdc850f, type: 2}
   - {fileID: 11400000, guid: c009239eaa20f30468cf33f95020bf97, type: 2}
   spawn1: {fileID: 1114941634}
@@ -1993,6 +1991,10 @@ PrefabInstance:
     - target: {fileID: 6109705562320198603, guid: 0468a1e16f28a4e2ab13c36e24ac6374, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7067385441423603267, guid: 0468a1e16f28a4e2ab13c36e24ac6374, type: 3}
+      propertyPath: customer
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8450025063511437687, guid: 0468a1e16f28a4e2ab13c36e24ac6374, type: 3}
       propertyPath: m_Name

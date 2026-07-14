@@ -15,6 +15,7 @@ MonoBehaviour:
   customerName: Cursed Placeholder
   sprite: {fileID: -5198404524020431775, guid: a37903c37bf952346a2ca8d41a0eead9, type: 3}
   animator: {fileID: 0}
+  customerType: 3
   spawnSound: {fileID: 0}
   successSound: {fileID: 0}
   failureSound: {fileID: 0}

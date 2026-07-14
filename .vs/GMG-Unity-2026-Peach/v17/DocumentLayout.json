@@ -3,32 +3,40 @@
   "WorkspaceRootPath": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|E:\\GMG\\Github\\GMG-Unity-2026-Peach\\assets\\gmg scripts\\peach squad\\customermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\customermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|E:\\GMG\\Github\\GMG-Unity-2026-Peach\\assets\\gmg scripts\\peach squad\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|e:\\gmg\\github\\gmg-unity-2026-peach\\assets\\gmg scripts\\peach squad\\trashcan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\trashcan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|E:\\GMG\\Github\\GMG-Unity-2026-Peach\\assets\\gmg scripts\\peach squad\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|E:\\GMG\\Github\\GMG-Unity-2026-Peach\\assets\\gmg scripts\\peach squad\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|e:\\gmg\\github\\gmg-unity-2026-peach\\assets\\gmg scripts\\peach squad\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|e:\\gmg\\github\\gmg-unity-2026-peach\\assets\\gmg scripts\\peach squad\\customermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\customermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|e:\\gmg\\github\\gmg-unity-2026-peach\\assets\\gmg scripts\\peach squad\\ingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|E:\\GMG\\Github\\GMG-Unity-2026-Peach\\assets\\gmg scripts\\peach squad\\ingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\ingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|e:\\gmg\\github\\gmg-unity-2026-peach\\assets\\gmg scripts\\peach squad\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|e:\\gmg\\github\\gmg-unity-2026-peach\\assets\\gmg scripts\\peach squad\\difficultymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|E:\\GMG\\Github\\GMG-Unity-2026-Peach\\assets\\gmg scripts\\peach squad\\difficultymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\difficultymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|e:\\gmg\\github\\gmg-unity-2026-peach\\assets\\gmg scripts\\peach squad\\ingredientholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|E:\\GMG\\Github\\GMG-Unity-2026-Peach\\assets\\gmg scripts\\peach squad\\ingredientholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\ingredientholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|e:\\gmg\\github\\gmg-unity-2026-peach\\assets\\gmg scripts\\peach squad\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F367F25-EC2A-6AEA-A026-F549199DB00B}|Assembly-CSharp.csproj|solutionrelative:assets\\gmg scripts\\peach squad\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,50 +46,74 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TrashCan.cs",
+              "DocumentMoniker": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\TrashCan.cs",
+              "RelativeDocumentMoniker": "Assets\\GMG Scripts\\Peach Squad\\TrashCan.cs",
+              "ToolTip": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\TrashCan.cs",
+              "RelativeToolTip": "Assets\\GMG Scripts\\Peach Squad\\TrashCan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T18:15:32.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\Customer.cs",
+              "RelativeDocumentMoniker": "Assets\\GMG Scripts\\Peach Squad\\Customer.cs",
+              "ToolTip": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\Customer.cs",
+              "RelativeToolTip": "Assets\\GMG Scripts\\Peach Squad\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T17:50:00.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "CustomerManager.cs",
               "DocumentMoniker": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\CustomerManager.cs",
               "RelativeDocumentMoniker": "Assets\\GMG Scripts\\Peach Squad\\CustomerManager.cs",
               "ToolTip": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\CustomerManager.cs",
               "RelativeToolTip": "Assets\\GMG Scripts\\Peach Squad\\CustomerManager.cs",
-              "ViewState": "AgIAAKEAAAAAAAAAAAAswMIAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAP0AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-14T01:38:14.023Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Ingredient.cs",
               "DocumentMoniker": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\Ingredient.cs",
               "RelativeDocumentMoniker": "Assets\\GMG Scripts\\Peach Squad\\Ingredient.cs",
               "ToolTip": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\Ingredient.cs",
               "RelativeToolTip": "Assets\\GMG Scripts\\Peach Squad\\Ingredient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-14T01:16:10.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-14T01:16:10.954Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "DifficultyManager.cs",
               "DocumentMoniker": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\DifficultyManager.cs",
               "RelativeDocumentMoniker": "Assets\\GMG Scripts\\Peach Squad\\DifficultyManager.cs",
               "ToolTip": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\DifficultyManager.cs",
               "RelativeToolTip": "Assets\\GMG Scripts\\Peach Squad\\DifficultyManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-14T00:43:57.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-14T00:43:57.117Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Inventory.cs",
               "DocumentMoniker": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\Inventory.cs",
               "RelativeDocumentMoniker": "Assets\\GMG Scripts\\Peach Squad\\Inventory.cs",
@@ -94,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "IngredientHolder.cs",
               "DocumentMoniker": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\IngredientHolder.cs",
               "RelativeDocumentMoniker": "Assets\\GMG Scripts\\Peach Squad\\IngredientHolder.cs",
@@ -102,12 +134,11 @@
               "RelativeToolTip": "Assets\\GMG Scripts\\Peach Squad\\IngredientHolder.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-13T23:59:59.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-13T23:59:59.487Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "InteractableObject.cs",
               "DocumentMoniker": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\InteractableObject.cs",
               "RelativeDocumentMoniker": "Assets\\GMG Scripts\\Peach Squad\\InteractableObject.cs",
@@ -120,13 +151,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "CustomerController.cs",
               "DocumentMoniker": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\CustomerController.cs",
               "RelativeDocumentMoniker": "Assets\\GMG Scripts\\Peach Squad\\CustomerController.cs",
               "ToolTip": "E:\\GMG\\Github\\GMG-Unity-2026-Peach\\Assets\\GMG Scripts\\Peach Squad\\CustomerController.cs",
               "RelativeToolTip": "Assets\\GMG Scripts\\Peach Squad\\CustomerController.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAQwCkAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAwC0AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-13T23:59:18.928Z",
               "EditorCaption": ""
