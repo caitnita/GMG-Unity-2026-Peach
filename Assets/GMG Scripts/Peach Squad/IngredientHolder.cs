@@ -4,6 +4,7 @@ public class IngredientHolder : InteractableObject
 {
     public Ingredient ingredient;
 
+    // We're overriding the Action() function in our base InteractableObject class
     public override void Action()
     {
         if (ingredient == null)
@@ -14,6 +15,8 @@ public class IngredientHolder : InteractableObject
         {
             playerInventory.inventory.Add(ingredient);
             PlaySound();
+
+            Debug.Log("Picked up " + ingredient.name);
         }
     }
 }
