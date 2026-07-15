@@ -12,7 +12,7 @@ public class UIScriptInspector : InspectorBase
 	private string[] readablePlayerEnum = new string[]{"One player", "Two players"};
 	private string[] readableGameTypesEnum = new string[]{"Score", "Life", "Endless"};
 
-	public override void OnInspectorGUI()
+	/*public override void OnInspectorGUI()
 	{
 		GUILayout.Space(10);
 		EditorGUILayout.HelpBox(explanation, MessageType.Info);
@@ -41,5 +41,5 @@ public class UIScriptInspector : InspectorBase
 		{
 			serializedObject.ApplyModifiedProperties();
 		}
-	}
+	}*/
 }

@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 [AddComponentMenu("Playground/Movement/Move With Arrows")]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -11,6 +12,7 @@ public class Move : Physics2DObject
 	[Header("Movement")]
 	[Tooltip("Speed of movement")]
 	public float speed = 5f;
+	public float maxSpeed;
 	public Enums.MovementType movementType = Enums.MovementType.AllDirections;
 
 	[Header("Orientation")]
@@ -25,10 +27,17 @@ public class Move : Physics2DObject
     //Animations
     public Animator animator;
 
+	//Physics
+	public Rigidbody2D body;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
-        Debug.Log(animator);
+        //Debug.Log(animator);
+
+		body = GetComponent<Rigidbody2D>();
+
+		maxSpeed = speed;
     }
     // Update gets called every frame
     void Update ()
@@ -37,13 +46,14 @@ public class Move : Physics2DObject
         // Moving with the arrow keys
         if(typeOfControl == Enums.KeyGroups.ArrowKeys)
 		{
-			moveHorizontal = Input.GetAxis("Horizontal");
-			moveVertical = Input.GetAxis("Vertical");
+			moveHorizontal = Input.GetAxisRaw("Horizontal");
+			moveVertical = Input.GetAxisRaw("Vertical");
+			//Debug.Log(moveHorizontal + " , " + moveVertical);
 		}
 		else if (typeOfControl == Enums.KeyGroups.WASD)
 		{
-			moveHorizontal = Input.GetAxis("Horizontal2");
-			moveVertical = Input.GetAxis("Vertical2");
+			moveHorizontal = Input.GetAxisRaw("Horizontal2");
+			moveVertical = Input.GetAxisRaw("Vertical2");
 		}
         //#endif
     
@@ -66,9 +76,9 @@ public class Move : Physics2DObject
 		//the axis to look can be decided with the "axis" variable
 		if(orientToDirection)
 		{
-			if(movement.sqrMagnitude >= 0.01f)
+			if(Mathf.Abs(movement.x) >= 0.01f)
 			{
-				cachedDirection = movement;
+				cachedDirection.x = movement.x;
 			}
 			Utils.SetAxisTowards(lookAxis, transform, cachedDirection);
 		}
@@ -81,8 +91,12 @@ public class Move : Physics2DObject
 	{
         // Apply the force to the Rigidbody2d
         //rigidbody2D.AddForce(movement * speed * 10f);
-        transform.position += movement * Time.deltaTime * speed * 10f;
-	}
+        //transform.position += movement * Time.deltaTime * speed * 10f;
+
+        // Define the velocity of the player object as player input, multiplied by our speed value.
+        body.linearVelocity = movement * speed;
+        body.linearVelocity = Vector2.ClampMagnitude(movement * speed, maxSpeed);
+    }
 
 
     // Set the horizontal move direction to left (-1) or right (1)

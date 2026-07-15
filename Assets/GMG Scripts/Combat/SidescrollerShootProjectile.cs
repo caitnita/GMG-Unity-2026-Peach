@@ -88,7 +88,7 @@ public class SidescrollerShootProjectile : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	float fireRateCounter = 0f;
+	//float fireRateCounter = 0f;
 	void Update () 
 	{
 		if (gameMgr.isPaused) return;
