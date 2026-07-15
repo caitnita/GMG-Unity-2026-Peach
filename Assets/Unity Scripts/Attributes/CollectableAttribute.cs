@@ -15,7 +15,7 @@ public class CollectableAttribute : MonoBehaviour
 	private void Start()
 	{
 		// Find the UI in the scene and store a reference for later use
-		userInterface = GameObject.FindObjectOfType<UIScript>();
+		userInterface = GameObject.FindFirstObjectByType<UIScript>();
 	}
 
 

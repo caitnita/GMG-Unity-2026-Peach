@@ -18,7 +18,7 @@ public class MoveInspector : InspectorBase
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("typeOfControl"));
 
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("speed"));
-		EditorGUILayout.PropertyField(serializedObject.FindProperty("movementType"));
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("movementType"));
 
 		GUILayout.Space(5);
 		GUILayout.Label("Orientation", EditorStyles.boldLabel);
