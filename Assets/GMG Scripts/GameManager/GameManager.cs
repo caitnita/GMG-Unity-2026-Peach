@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameSettings
 {
@@ -18,11 +17,11 @@ public class GameManager : MonoBehaviour {
 	private static GameManager gameMgr;
     public GameSettings Settings{ get; private set; }
 
-    public static GameManager Inst()
+	public static GameManager Inst()
 	{
 		if (gameMgr != null) return gameMgr;
 
-		GameManager[] gameMgrs = Object.FindObjectsByType(typeof(GameManager),FindObjectsSortMode.None) as GameManager[];
+		GameManager[] gameMgrs = Object.FindObjectsOfType(typeof(GameManager)) as GameManager[];
 		foreach (GameManager gameManager in gameMgrs)
 		{
 			gameMgr = gameManager;
@@ -42,6 +41,7 @@ public class GameManager : MonoBehaviour {
 
 		return gameMgr;
 	}
+
 
     public bool isPaused = false;
     public delegate void PauseHandler(bool pause);

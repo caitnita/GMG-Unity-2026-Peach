@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BulletDestroyOnCollisionWithTag : MonoBehaviour
 {
-    [SerializeField] string bulletTag;
-    //string shooterTag;
+    [SerializeField] string tag;
+    string shooterTag;
     [SerializeField] bool destroyBulletOnCollisionWithTag;
     [SerializeField] bool destroyBulletOnColiisionWithAnything;
     public AudioClip soundFile;
@@ -17,7 +17,7 @@ public class BulletDestroyOnCollisionWithTag : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(bulletTag))
+        if (collision.CompareTag(tag))
         {
             if (!audioSrc.isPlaying)
             {

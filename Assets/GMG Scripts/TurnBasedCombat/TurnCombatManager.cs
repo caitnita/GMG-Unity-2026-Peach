@@ -143,8 +143,8 @@ public class TurnCombatManager : MonoBehaviour {
 		//INIT PLAYERS
 		turnPlayers.Clear();
 
-		//int playersinfight = 0;
-		//int enemiesinfight = 0;
+		int playersinfight = 0;
+		int enemiesinfight = 0;
 
 		enemyHolder.transform.localPosition = new Vector2 (enemyHolder.transform.localPosition.x,enemyHolderInitialY);
 		playerHolder.transform.localPosition = new Vector2 (playerHolder.transform.localPosition.x,playerHolderInitialY);

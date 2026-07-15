@@ -27,7 +27,7 @@ public class DialogueBalloonAction : Action
 	{
 		if(!balloonIsActive)
 		{
-			DialogueSystem d = GameObject.FindFirstObjectByType<DialogueSystem>();
+			DialogueSystem d = GameObject.FindObjectOfType<DialogueSystem>();
 			if(d == null)
 			{
 				//Dialogue System is not in the scene
