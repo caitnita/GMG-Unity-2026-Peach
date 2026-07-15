@@ -7,7 +7,8 @@ public class CustomerManager : MonoBehaviour
     // This script will hold our lists of different customer types, spawn customers,
     // and control how many customer spawn points there are.
 
-    private DifficultyManager DifficultyManager;
+    private DifficultyManager difficultyManager;
+    private GameManager gameManager;
 
     public GameObject customerPrefab;
 
@@ -53,7 +54,12 @@ public class CustomerManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        DifficultyManager = GetComponent<DifficultyManager>();
+        difficultyManager = GetComponent<DifficultyManager>();
+        gameManager = GetComponent<GameManager>();
+
+        spawn1Occupied = true;
+        spawn2Occupied = true;
+        spawn3Occupied = true;
 
         // Duplicate our ingredient list into ingredientPool, so we can edit this list to remove required ingredients and store in a separate list
         ingredientPool = new List<Ingredient>(ingredients);
@@ -97,7 +103,7 @@ public class CustomerManager : MonoBehaviour
             }
         }
 
-        Phase1();
+        Phase1();   
     }
 
     // Update is called once per frame
@@ -207,7 +213,6 @@ public class CustomerManager : MonoBehaviour
     public void Phase1()
     {
         Debug.Log("Starting Phase 1");
-        spawn1Occupied = true;
         customerPool = new List<Customer>(normalCustomers);
         spawnTime = defaultSpawnTime;
         orderSize = defaultOrderSize;
