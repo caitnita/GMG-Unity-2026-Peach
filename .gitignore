@@ -15,6 +15,7 @@ UserSettings/
 Thumbs.db
 .vs/
 .vscode/
+.vs/
 *.csproj
 *.sln
 *.user
