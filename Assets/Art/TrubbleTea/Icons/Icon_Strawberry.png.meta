@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 34795d3fd25b0fd4782befbc123d943f
+guid: feb020b368021344db1253672a133bb4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4801948386277397288
-    second: Thoughtbubble_0
-  - first:
-      213: -3080818047336523331
-    second: Thoughtbubble_1
-  - first:
-      213: 178406467279226004
-    second: Thoughtbubble_2
+      213: -283529460525937575
+    second: Icon_Strawberry_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Thoughtbubble_0
+      name: Icon_Strawberry_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 125
-        width: 594
-        height: 502
+        x: 1
+        y: 0
+        width: 57
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82313d19d92f3a240800000000000000
-      internalID: 4801948386277397288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Thoughtbubble_1
-      rect:
-        serializedVersion: 2
-        x: 109
-        y: 12
-        width: 105
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: db9d4ee0f4cbe35d0800000000000000
-      internalID: -3080818047336523331
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Thoughtbubble_2
-      rect:
-        serializedVersion: 2
-        x: 217
-        y: 55
-        width: 123
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4948fcb9cb3d97200800000000000000
-      internalID: 178406467279226004
+      spriteID: 95c4ef53573b01cf0800000000000000
+      internalID: -283529460525937575
       vertices: []
       indices: 
       edges: []
@@ -175,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Thoughtbubble_0: 4801948386277397288
-      Thoughtbubble_1: -3080818047336523331
-      Thoughtbubble_2: 178406467279226004
+      Icon_Strawberry_0: -283529460525937575
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

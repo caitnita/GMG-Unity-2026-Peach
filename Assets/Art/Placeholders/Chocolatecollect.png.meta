@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 34795d3fd25b0fd4782befbc123d943f
+guid: bacd3c6005624d548a1580850a351643
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4801948386277397288
-    second: Thoughtbubble_0
-  - first:
-      213: -3080818047336523331
-    second: Thoughtbubble_1
-  - first:
-      213: 178406467279226004
-    second: Thoughtbubble_2
+      213: 31078170496622209
+    second: Chocolatecollect_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Thoughtbubble_0
+      name: Chocolatecollect_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 125
-        width: 594
-        height: 502
+        x: 31
+        y: 33
+        width: 562
+        height: 578
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82313d19d92f3a240800000000000000
-      internalID: 4801948386277397288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Thoughtbubble_1
-      rect:
-        serializedVersion: 2
-        x: 109
-        y: 12
-        width: 105
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: db9d4ee0f4cbe35d0800000000000000
-      internalID: -3080818047336523331
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Thoughtbubble_2
-      rect:
-        serializedVersion: 2
-        x: 217
-        y: 55
-        width: 123
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4948fcb9cb3d97200800000000000000
-      internalID: 178406467279226004
+      spriteID: 18e58b07e696e6000800000000000000
+      internalID: 31078170496622209
       vertices: []
       indices: 
       edges: []
@@ -185,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Thoughtbubble_0: 4801948386277397288
-      Thoughtbubble_1: -3080818047336523331
-      Thoughtbubble_2: 178406467279226004
+      Chocolatecollect_0: 31078170496622209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
