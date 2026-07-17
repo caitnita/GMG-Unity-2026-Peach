@@ -45,10 +45,16 @@ public class CustomerController : InteractableObject
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        Debug.Log(spriteRenderer);
-        Debug.Log(customer.sprite.name);
-        spriteRenderer.sprite = customer.sprite;
-        anim = customer.animator;
+        if (customer != null)
+        {
+            spriteRenderer.sprite = customer.sprite;
+            anim = customer.animator;
+            PlaySound(customer.spawnSound);
+        }
+        else
+        {
+            // Customer unassigned
+        }
 
         gameManager = GameObject.Find("Game Manager");
         difficultyManager = gameManager.GetComponent<DifficultyManager>();
@@ -68,12 +74,16 @@ public class CustomerController : InteractableObject
             {
                 Debug.Log("Correct order!");
 
+                PlaySound(customer.successSound);
+
                 // Tell the difficulty manager!
                 difficultyManager.CompleteOrder();
             }
             else
             {
                 Debug.Log("Wrong order!");
+
+                PlaySound(customer.failureSound);
 
                 // Tell the difficulty manager!
                 difficultyManager.FailOrder();
@@ -85,7 +95,9 @@ public class CustomerController : InteractableObject
             // After checking the order, this customer needs to wrap it up!
             StartCoroutine(Leave());
         }
-        else { }
+        else {
+            PlaySound(customer.waitSound);
+        }
     }
 
     bool CheckOrder()
@@ -117,8 +129,17 @@ public class CustomerController : InteractableObject
     {
         // We'll wait a minute before deleting the customer, so they have time for a sound effect, animation,
         // and for the player to be able to register if they succeeded on or failed the order.
-        yield return new WaitForSeconds(customerManager.destroyDelay);
-
+        float soundLength;
+        soundLength = Mathf.Max(customer.failureSound.length, customer.successSound.length);
+        if (soundLength > customerManager.destroyDelay)
+        {
+            yield return new WaitForSeconds(soundLength);
+        }
+        else
+        {
+            yield return new WaitForSeconds(customerManager.destroyDelay);
+        }
+            
         // Tell the Customer Manager script that this customer's spawn slot is now empty!
         customerManager.EmptySlot(spawnLocation);
 

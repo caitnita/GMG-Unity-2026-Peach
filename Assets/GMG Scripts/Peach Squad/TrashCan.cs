@@ -8,7 +8,7 @@ public class TrashCan : InteractableObject
         if (playerInventory.inventory.Count > 0)
         {
             playerInventory.inventory.Clear();
-            PlaySound();
+            PlaySound(null);
             Debug.Log("Emptied inventory");
         }
         else

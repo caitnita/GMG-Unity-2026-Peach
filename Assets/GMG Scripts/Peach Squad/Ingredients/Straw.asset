@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Straw
   m_EditorClassIdentifier: 
   ingredientName: straw
-  sprite: {fileID: 0}
-  sound: {fileID: 0}
+  sprite: {fileID: 3830898321858223139, guid: ecef084a46066a14ab95c7d9229d41b9, type: 3}
+  sound: {fileID: 8300000, guid: dc525ae932ce00e4baab02d16f5102bc, type: 3}
   isRequired: 1
   isUnique: 1
+  isCursed: 0

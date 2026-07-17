@@ -20,7 +20,6 @@ public class InteractableObject : MonoBehaviour
     protected virtual void Start()
     {
         audioSrc = gameObject.AddComponent<AudioSource>();
-        audioSrc.clip = soundFile;
         audioSrc.loop = false;
         audioSrc.playOnAwake = false;
 
@@ -57,14 +56,24 @@ public class InteractableObject : MonoBehaviour
         // Our subclass scripts will override this function.
         // If we ever forget to make an override, we'll see this fun message in the console
         Debug.Log("I'm a default action :)");
+        PlaySound(null);
     }
 
-    public virtual void PlaySound()
+    public virtual void PlaySound(AudioClip sound)
     {
+        // If we didn't input a sound when calling PlaySound()...
+        if (sound == null)
+        {
+            // Set the sound to our default soundFile.
+            sound = soundFile;
+        }
+
         // If we have a sound file selected...
-        if (soundFile != null)
+        if (sound != null)
         {
             // Use our audio source to play the sound file.
+            audioSrc.Stop();
+            audioSrc.clip = sound;
             audioSrc.Play();
         }
         else
@@ -81,6 +90,7 @@ public class InteractableObject : MonoBehaviour
     // Check for trigger enters that match either the "Player" tag or the "InteractBox" name.
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Debug.Log(this.gameObject.name +"+"+collision.gameObject.name);
         if ((collision.gameObject.name == "InteractBox")||(collision.gameObject.CompareTag("Player")))
         {
             onPlayer = true;

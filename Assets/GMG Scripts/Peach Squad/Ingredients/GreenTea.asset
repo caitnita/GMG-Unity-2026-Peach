@@ -10,7 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44818c82ca15e3f4e92dbf793297eab1, type: 3}
-  m_Name: Tea
+  m_Name: GreenTea
   m_EditorClassIdentifier: 
-  ingredientName: tea
-  sprite: {fileID: 0}
+  ingredientName: greenTea
+  sprite: {fileID: -5731466403182066133, guid: f7a0af24b3f40db46a5dd9879ec9254b, type: 3}
+  sound: {fileID: 8300000, guid: 4514fb9a7db758941a79bc8bd59e07dd, type: 3}
+  isRequired: 0
+  isUnique: 0
+  isCursed: 0

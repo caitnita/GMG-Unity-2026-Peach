@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44818c82ca15e3f4e92dbf793297eab1, type: 3}
+  m_Name: Eyeball
+  m_EditorClassIdentifier: 
+  ingredientName: eyeball
+  sprite: {fileID: -221958180926758451, guid: b80521de2a742584fa2930f36450b2d5, type: 3}
+  sound: {fileID: 8300000, guid: 992feef58aec854438e2c8a72db77e0a, type: 3}
+  isRequired: 0
+  isUnique: 0
+  isCursed: 1

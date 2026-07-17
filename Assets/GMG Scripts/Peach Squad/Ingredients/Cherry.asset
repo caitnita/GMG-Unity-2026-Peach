@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Cherry
   m_EditorClassIdentifier: 
   ingredientName: cherry
-  sprite: {fileID: 0}
-  sound: {fileID: 0}
+  sprite: {fileID: 2161390975652012832, guid: 694189613a7934a4c90f5a01da4b909d, type: 3}
+  sound: {fileID: 8300000, guid: 1e55b35d145e39d4ca31cd62e9c06f2b, type: 3}
   isRequired: 0
   isUnique: 0
+  isCursed: 0

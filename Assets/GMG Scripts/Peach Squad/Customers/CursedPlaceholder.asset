@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: CursedPlaceholder
   m_EditorClassIdentifier: 
   customerName: Cursed Placeholder
-  sprite: {fileID: -5198404524020431775, guid: a37903c37bf952346a2ca8d41a0eead9, type: 3}
+  sprite: {fileID: -2312155800622145952, guid: 47e503195aaf61b46b9028696b4aa78e, type: 3}
   animator: {fileID: 0}
-  customerType: 3
-  spawnSound: {fileID: 0}
-  successSound: {fileID: 0}
-  failureSound: {fileID: 0}
-  waitSound: {fileID: 0}
+  customerType: 1
+  spawnSound: {fileID: 8300000, guid: fc7dd54c466d08f4e8f2b3796baa701f, type: 3}
+  successSound: {fileID: 8300000, guid: add59b644885ec7448103a3570452980, type: 3}
+  failureSound: {fileID: 8300000, guid: 285c58ebf35a39f4d9e132d53ec84f16, type: 3}
+  waitSound: {fileID: 8300000, guid: 3d4ce1f42c392344484465bdc69cc13d, type: 3}

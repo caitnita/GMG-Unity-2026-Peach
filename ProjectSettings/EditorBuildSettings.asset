@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Caity Levels/Main Menu Test.unity
-    guid: ce2b021d4228abd4b8160d2b7502d644
+    path: Assets/Scenes/Caity Levels/Menu.unity
+    guid: 10e7cdbec7de7ed4b95bcdabbb7e1c8b
   - enabled: 1
-    path: Assets/Scenes/Caity Levels/Caity Testing Cafe.unity
-    guid: 7ade235f56ffa464397b05f8c7208db2
+    path: Assets/Scenes/Caity Levels/Cutscenes.unity
+    guid: 2daf3b58c27b8314381427a5558843ef
+  - enabled: 1
+    path: Assets/Scenes/Caity Levels/TrubbleTea.unity
+    guid: e21b0517bc28eab419da30db38d014d3
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0

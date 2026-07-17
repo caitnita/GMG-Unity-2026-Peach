@@ -10,7 +10,11 @@ public class GameState : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        inputMgr = GameObject.Find("Game Manager").GetComponent<InputManager>();
+        if (GameObject.Find("Game Manager"))
+        {
+            inputMgr = GameObject.Find("Game Manager").GetComponent<InputManager>();
+        }
+        else { }
 
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
@@ -45,7 +49,6 @@ public class GameState : MonoBehaviour
     public void LoadScene()
     {
         Debug.Log("Load next scene! :)");
-        /*
         if (gameState == 0)
         {
             gameState = 2;
@@ -70,7 +73,7 @@ public class GameState : MonoBehaviour
         {
             gameState = 0;
             SceneManager.LoadScene(0);
-        }*/
+        }
     }
 
     public void ExitGame()

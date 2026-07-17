@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Cup
   m_EditorClassIdentifier: 
   ingredientName: cup
-  sprite: {fileID: 0}
-  sound: {fileID: 0}
+  sprite: {fileID: 3126789409692295121, guid: b08de71c08d2c1e4996c663e4197af5a, type: 3}
+  sound: {fileID: 8300000, guid: 5d4c1a6dd33a24544abc6098fc3297e9, type: 3}
   isRequired: 1
   isUnique: 0
+  isCursed: 0

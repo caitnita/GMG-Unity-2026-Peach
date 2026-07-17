@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -7,6 +8,10 @@ public class Inventory : MonoBehaviour
     public InputManager.InputButton interactButton = InputManager.InputButton.Action1;
 
     public float maxInventory;
+
+    public bool pickupWait = false;
+    public float pickupDelay = 1f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,5 +27,12 @@ public class Inventory : MonoBehaviour
             inventory.RemoveAt(inventory.Count-1);
         }
         else { }
+    }
+
+    public IEnumerator PickupDelay()
+    {
+        pickupWait = true;
+        yield return new WaitForSeconds(pickupDelay);
+        pickupWait = false;
     }
 }

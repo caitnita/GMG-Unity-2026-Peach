@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Boba
   m_EditorClassIdentifier: 
   ingredientName: boba
-  sprite: {fileID: 0}
+  sprite: {fileID: -7824658173135413056, guid: 1e31e6fb0b7886944b248e5b8efc2b0f, type: 3}
+  sound: {fileID: 8300000, guid: 62e6953508b621e42964f87713cb21c2, type: 3}
+  isRequired: 0
+  isUnique: 0
+  isCursed: 0
