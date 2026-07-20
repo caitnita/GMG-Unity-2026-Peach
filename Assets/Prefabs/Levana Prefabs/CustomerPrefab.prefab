@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8450025063511437687}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.9663062, y: -5.468204, z: 0.033878315}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
@@ -143,5 +143,10 @@ MonoBehaviour:
   customer: {fileID: 0}
   order: []
   spawnLocation: 0
+  patienceBar: {fileID: 0}
   patienceMax: 0
   patience: 0
+  fullPatienceColor: {r: 0.40108567, g: 1, b: 0.25943398, a: 0}
+  emptyPatienceColor: {r: 0.30231407, g: 0.2783019, b: 1, a: 0}
+  uiBubble: {fileID: 0}
+  image: {fileID: 1392196689852443928, guid: 931674e4b4f274248a00aa860f618097, type: 3}

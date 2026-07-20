@@ -8,7 +8,20 @@ public class IngredientHolder : InteractableObject
     // We're overriding the Start() function in our base InteractableObject class...
     protected override void Start()
     {
-        soundFile = ingredient.sound;
+        if (ingredient == null)
+        {
+            Debug.Log(this.gameObject.name + " game object is missing an ingredient assignment.");
+            this.gameObject.SetActive(false);
+        }
+        else if (ingredient.sound != null)
+        {
+            soundFile = ingredient.sound;
+        }
+        else
+        {
+            Debug.Log(ingredient.name + " Ingredient scriptable object is missing a sound file.");
+        }
+
         // But we still want the old Start() to run, so we're using base.Start() in our override.
         base.Start();
     }
@@ -24,7 +37,7 @@ public class IngredientHolder : InteractableObject
         {
             if (!playerInventory.pickupWait)
             {
-                playerInventory.inventory.Add(ingredient);
+                playerInventory.PickUp(ingredient);
                 PlaySound(null);
 
                 Debug.Log("Picked up " + ingredient.name);

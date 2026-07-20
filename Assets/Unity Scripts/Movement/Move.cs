@@ -81,7 +81,7 @@ public class Move : Physics2DObject
 		movement = new Vector3(moveHorizontal, moveVertical);
 
         // Every frame, set the animator input values to match our movement values.
-		animator.SetFloat("inputX", movement.x);
+        animator.SetFloat("inputX", movement.x);
         animator.SetFloat("inputY", movement.y);
 
         // If the player is NOT moving...

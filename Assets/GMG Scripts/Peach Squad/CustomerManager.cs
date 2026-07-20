@@ -25,31 +25,45 @@ public class CustomerManager : MonoBehaviour
     private List<Ingredient> requiredIngredients = new List<Ingredient>();
     private List<Ingredient> order = new List<Ingredient>();
 
+    [Header("Spawn location GameObjects")]
     public GameObject spawn1;
     public GameObject spawn2;
     public GameObject spawn3;
 
     // Timers for our different spawn locations
     public float spawn1Timer;
-    private float spawn2Timer;
-    private float spawn3Timer;
+    public float spawn2Timer;
+    public float spawn3Timer;
 
     private bool spawn1Occupied;
     private bool spawn2Occupied;
     private bool spawn3Occupied;
 
-    public float defaultSpawnTime;
-    public float spawnTime;
+    [Header("Spawn time settings")]
+    public float defaultSpawnTime = 10f;
+    public float spawnTimeDecrease = 1f;
+    private float spawnTime;
     
     // The amount of time to delay at the beginning of the game before spawning the first customer
-    public float startSpawnDelay;
+    public float startSpawnDelay = 2f;
 
     // The amount of time to delay after delivering the order, and the customer leaving (regardless of correct/wrong)
-    public float destroyDelay;
+    public float destroyDelay = 2f;
 
-    public float defaultOrderSize;
-    public float orderSizeIncrease;
+    [Header("Order size settings")]
+    public float defaultOrderSizeMin = 3f;
+    public float defaultOrderSizeMax = 4f;
+    public float orderSizeIncrease = 1f;
+    private float currOrderSizeMin;
+    private float currOrderSizeMax;
     private float orderSize;
+
+    [Header("Patience settings")]
+    public bool usePatience;
+    public float defaultMaxPatience = 30f;
+    public float minPatience = 5f;
+    public float patienceDecrease = 1f;
+    private float currMaxPatience;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -126,7 +140,7 @@ public class CustomerManager : MonoBehaviour
             spawn1Timer = 0;
 
             // and spawn a customer in the first slot.
-            Spawn1();
+            Spawn(1);
         }
         else { }
 
@@ -137,7 +151,7 @@ public class CustomerManager : MonoBehaviour
         else if (!spawn2Occupied)
         {
             spawn2Timer = 0;
-            Spawn2();
+            Spawn(2);
         }
         else { }
 
@@ -148,18 +162,38 @@ public class CustomerManager : MonoBehaviour
         else if (!spawn3Occupied)
         {
             spawn3Timer = 0;
-            Spawn3();
+            Spawn(3);
         }
         else { }
     }
 
-    public void Spawn1()
+    public void Spawn(float location)
     {
+        // Create a local variable to hold the game object we're using to set the location of each spawn point
+        GameObject spawnLocationObject = null;
+
         // Set the corresponding "occupied" boolean to true, so that we don't keep trying to spawn more customers in the same spot!
-        spawn1Occupied = true;
+        // Set the spawnLocationObject to the corresponding spawn point object
+        if (location == 1)
+        {
+            spawn1Occupied = true;
+            spawnLocationObject = spawn1;
+        }
+        else if (location == 2)
+        {
+            spawn2Occupied = true;
+            spawnLocationObject = spawn2;
+        }
+        else if (location == 3)
+        {
+            spawn3Occupied = true;
+            spawnLocationObject = spawn3;
+        }
+        else { }
 
         // Create a copy of the Customer Prefab, at the position and rotation of the spawn1 game object
-        GameObject customerSpawn = Instantiate(customerPrefab,spawn1.transform.position,spawn1.transform.rotation);
+        GameObject customerSpawn = Instantiate(customerPrefab, spawnLocationObject.transform.position, spawnLocationObject.transform.rotation,spawnLocationObject.transform);
+        customerSpawn.SetActive(false);
 
         // Get the customer controller script on the newly created game object
         CustomerController customerController = customerSpawn.GetComponent<CustomerController>();
@@ -167,20 +201,12 @@ public class CustomerManager : MonoBehaviour
         // Set the Customer scriptable object on the game object to a random one from our customer pool,
         // and assign the correct spawn location.
         customerController.customer = GetCustomer();
-        customerController.spawnLocation = 1f;
+        customerController.spawnLocation = location;
         customerController.order = CreateOrder(customerController.customer.customerType);
-    }
+        customerController.patienceMax = currMaxPatience;
+        customerSpawn.name = customerController.customer.name;
 
-    public void Spawn2()
-    {
-        spawn2Timer = spawnTime;
-        spawn2Occupied = true;
-    }
-
-    public void Spawn3()
-    {
-        spawn3Timer = spawnTime;
-        spawn3Occupied = true;
+        customerSpawn.SetActive(true);
     }
 
     public void EmptySlot(float location)
@@ -207,37 +233,54 @@ public class CustomerManager : MonoBehaviour
 
     public Customer GetCustomer()
     {
-        return customerPool[Random.Range(0, customerPool.Count)];
+        return customerPool[customerPool.Count-1];
+        //return customerPool[Random.Range(0, customerPool.Count)];
     }
 
     public void Phase1()
     {
         Debug.Log("Starting Phase 1");
-        customerPool = new List<Customer>(normalCustomers);
-        spawnTime = defaultSpawnTime;
-        orderSize = defaultOrderSize;
 
-        StartCoroutine(SpawnDelay());
+        // Our customer pool in phase 1 is entirely normal customers, so we are making a new copy of the normalCustomers list
+        customerPool = new List<Customer>(normalCustomers);
+
+        // Set spawn time, order size minimum, and order size maximum to defaults.
+        spawnTime = defaultSpawnTime;
+        currOrderSizeMax = defaultOrderSizeMax;
+        currOrderSizeMin = defaultOrderSizeMin;
+        currMaxPatience = defaultMaxPatience;
+
+        spawn1Timer = startSpawnDelay;
+        spawn1Occupied = false;
     }
 
     public void Phase2()
     {
+        Debug.Log("Starting Phase 2");
+
+        // Our customer pool in phase 2 is normal AND less creepy customers, so we will add the creepyCustomers list to our current pool created in phase 1
         customerPool.AddRange(creepyCustomers);
-        orderSize += orderSizeIncrease;
+
+        // Multiply current spawn time by 2, now that we have 2 spawns
+        spawnTime *= 2f;
+
+        // Change any on screen effects, or music effects
     }
 
     public void Phase3()
     {
-        customerPool = new List<Customer>(creepyCustomers);
-        customerPool.AddRange(cursedCustomers);
-        orderSize += orderSizeIncrease;
-    }
+        Debug.Log("Starting Phase 3");
 
-    IEnumerator SpawnDelay()
-    {
-        // Wait for our defined amount of time, then spawn our first customer
-        yield return new WaitForSeconds(startSpawnDelay);
-        Spawn1();
+        // Our customer pool in phase 3 is creepy AND cursed customers, with many fewer cute customers,
+        // So we will add another copy of the creepyCustomers list, and two copies of the cursed customers list
+        customerPool.AddRange(creepyCustomers);
+        customerPool.AddRange(cursedCustomers);
+        customerPool.AddRange(cursedCustomers);
+
+        // Multiply current spawn time by 1.5, now that we have 3 spawns
+        spawnTime *= 1.5f;
+
+        // Change any on screen effects, or music effects
     }
 
     private List<Ingredient> CreateOrder(int customerType)
@@ -248,15 +291,26 @@ public class CustomerManager : MonoBehaviour
         // Set our working ingredient pool back to default
         List<Ingredient> currIngredientPool = new List<Ingredient>(ingredientPool);
 
-        // If customer is cursed type, add cursed ingredients to the ingredient pool.
-        if (customerType == 3)
+        // Add all required items to the order.
+        order.AddRange(requiredIngredients);
+        orderSize = Random.Range(currOrderSizeMin, currOrderSizeMax);
+
+        // If customer is creepy type...
+        if (customerType == 2)
         {
+            // Increase ordersize by 1.25
+            orderSize = Mathf.Floor(orderSize * 1.25f);
+
+        }
+        // If customer is cursed type...
+        else if (customerType == 3)
+        {
+            // Increase ordersize by 1.5
+            orderSize = Mathf.Floor(orderSize * 1.5f);
+            // Add cursed ingredients to the ingredient pool.
             currIngredientPool.AddRange(cursedIngredients);
         }
         else { }
-
-        // Add all required items to the order.
-        order.AddRange(requiredIngredients);
 
         for (var i = order.Count; i < orderSize; i++)
         {
@@ -273,5 +327,42 @@ public class CustomerManager : MonoBehaviour
         }
 
         return order;
+    }
+
+    public void IncreaseOrderSize()
+    {
+        // Increase the minimum order size by the listed amount, but increase the maximum by the listed amount times a factor of 1.5
+        currOrderSizeMin += orderSizeIncrease;
+        currOrderSizeMax += Mathf.Floor(orderSizeIncrease*1.5f);
+    }
+
+    public void DecreaseTimers()
+    {
+        // If our spawn time is greater than 1, recalculate using our number of orders completed, and softening by number of orders failed
+        if (spawnTime > 1)
+        {
+            spawnTime -= spawnTimeDecrease * difficultyManager.ordersCompleted / (difficultyManager.ordersFailed+1);
+        }
+        else { }
+
+        // If we go below a 1 second spawn timer after the above, reset it back to 1.
+        if (spawnTime < 1)
+        {
+            spawnTime = 1;
+        }
+        else { }
+
+        // If our maximum patience is greater than the minimum, recalculate using our number of orders completed, and softening by number of orders failed
+        if (currMaxPatience > minPatience)
+        {
+            currMaxPatience -= patienceDecrease * difficultyManager.ordersCompleted / (difficultyManager.ordersFailed + 1);
+        }
+
+        // If we go below our minimum patience after the above, reset it back to the minimum.
+        if (currMaxPatience < minPatience)
+        {
+            currMaxPatience = minPatience;
+        }
+        else { }
     }
 }

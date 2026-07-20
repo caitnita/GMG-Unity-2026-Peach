@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - SceneManager
   - GameManager
+  - InventoryItem
   layers:
   - Default
   - TransparentFX

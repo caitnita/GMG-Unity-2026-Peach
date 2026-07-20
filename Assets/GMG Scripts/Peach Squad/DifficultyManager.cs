@@ -6,27 +6,28 @@ public class DifficultyManager : MonoBehaviour
 
     [Header("Order Counters")]
     // How many orders has the player successfully completed?
-    public float ordersCompleted = 0f;
+    public int ordersCompleted = 0;
     // How many orders has the player failed?
-    public float ordersFailed = 0f;
+    public int ordersFailed = 0;
     // Our difficulty modifier, which we will use to calculate customer patience / spawn rates and track difficulty phases.
-    public float difficultyModifier = 1f;
-    
+    public int difficultyModifier = 1;
+
     // We will keep a separate counter of completed orders, to track our progress to the increase in difficulty modifier.
-    float ordersPerLevelCounter = 0f;
+    int ordersPerLevelCounter = 0;
 
     [Header("Difficulty Phase Settings")]
     // How many orders must be completed to increase the difficulty modifier
-    public float ordersPerLevel = 5f;
+    public int ordersPerLevel = 5;
     // At which difficulty level will each new phase start?
     // This will affect changes to our game like increased order length, creepier customers, and on screen effects
-    public float difficultyPhase2 = 1f;
-    public float difficultyPhase3 = 2f;
+    [Header("Additive (Phase 3 will start x levels after Phase 2)")]
+    public int difficultyPhase2;
+    public int difficultyPhase3;
 
     // Our tracker for which phase of difficulty we're on.
     // We're hiding this in the inspector to keep us from editing it directly during play mode.
-    [HideInInspector]
-    public float difficultyPhaseCounter = 1;
+    //[HideInInspector]
+    public int difficultyPhaseCounter = 1;
 
     private CustomerManager customerManager;
 
@@ -49,9 +50,13 @@ public class DifficultyManager : MonoBehaviour
         {
             // Increase the difficulty modifier by one
             difficultyModifier++;
+            Debug.Log("Increase difficulty modifier");
+
+            // Calculate changes to minimum/maximum order size after every difficulty modifier increase.
+            customerManager.IncreaseOrderSize();
 
             // If our difficulty modifier hits the threshold for a new phase...
-            if (difficultyModifier == difficultyPhase2 | difficultyModifier == difficultyPhase3)
+            if (difficultyModifier == (1 + difficultyPhase2) || difficultyModifier == (1+difficultyPhase2+difficultyPhase3))
             {
                 // Increase the difficulty phase by one
                 difficultyPhaseCounter++;
@@ -67,8 +72,12 @@ public class DifficultyManager : MonoBehaviour
             }
             // When we're done, make sure to set our per-level counter back to zero.
             ordersPerLevelCounter = 0;
+            Debug.Log("Reset ordersPerLevelCounter to zero");
         }
         else { }
+
+        // Calculate changes to the customer respawn timer and patience timer after every completed order.
+        customerManager.DecreaseTimers();
     }
 
     // We will call this from our customer game objects when an order is failed.
