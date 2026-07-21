@@ -306,7 +306,7 @@ Transform:
   m_GameObject: {fileID: 180977795}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.94, y: 6.852127, z: 0.025138048}
+  m_LocalPosition: {x: -17.53, y: 6.852127, z: 0.025138048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2132,7 +2132,7 @@ Transform:
   m_GameObject: {fileID: 1118785300}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.17, y: -3.7199998, z: 0.033878315}
+  m_LocalPosition: {x: 8.11, y: -6.3499994, z: 0.033878315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3087,7 +3087,7 @@ Transform:
   m_GameObject: {fileID: 1636940910}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.17, y: 2.96, z: 0.033878315}
+  m_LocalPosition: {x: 8.11, y: 0.33, z: 0.033878315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3559,7 +3559,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ef6244fb14fde49a88d9375bd48ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseButton: 0
+  pauseMenu: {fileID: 0}
   isPaused: 0
+  isStopped: 0
 --- !u!4 &2116123789
 Transform:
   m_ObjectHideFlags: 0
@@ -3616,6 +3619,8 @@ MonoBehaviour:
   defaultMaxPatience: 30
   minPatience: 5
   patienceDecrease: 1
+  successSprite: {fileID: 0}
+  failSprite: {fileID: 0}
 --- !u!114 &2116123791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3628,6 +3633,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ec07ae697f00144bb3a53fc61c0f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  healthUI: {fileID: 0}
+  healthImage: {fileID: 0}
   ordersCompleted: 0
   ordersFailed: 0
   difficultyModifier: 1
@@ -3688,7 +3696,7 @@ Transform:
   m_GameObject: {fileID: 2132515164}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.17, y: -0.13, z: 0.033878315}
+  m_LocalPosition: {x: 8.11, y: -2.7599998, z: 0.033878315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
