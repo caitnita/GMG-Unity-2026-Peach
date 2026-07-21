@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44818c82ca15e3f4e92dbf793297eab1, type: 3}
-  m_Name: Milk
+  m_Name: StrawBerry
   m_EditorClassIdentifier: 
-  ingredientName: milk
-  sprite: {fileID: -1270838226611166008, guid: d8523e51383564851ab304aa54d1265a, type: 3}
-  sound: {fileID: 8300000, guid: 9e561388c49448a4690acaf37e67ef91, type: 3}
-  isRequired: 0
-  isUnique: 0
+  ingredientName: strawberry
+  sprite: {fileID: -283529460525937575, guid: feb020b368021344db1253672a133bb4, type: 3}
+  sound: {fileID: 8300000, guid: 6f9e75726d8d0a245b59addf1dada916, type: 3}
+  isRequired: 1
+  isUnique: 1
   isCursed: 0

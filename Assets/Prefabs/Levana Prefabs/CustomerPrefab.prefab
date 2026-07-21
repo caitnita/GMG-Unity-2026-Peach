@@ -337,6 +337,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8138464918471357885}
     m_Modifications:
+    - target: {fileID: 1947698867757772490, guid: 932b0bfc21ee4b14ba1da834d6bf95ed, type: 3}
+      propertyPath: m_CellSize.x
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947698867757772490, guid: 932b0bfc21ee4b14ba1da834d6bf95ed, type: 3}
+      propertyPath: m_CellSize.y
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 2298813589456567228, guid: 932b0bfc21ee4b14ba1da834d6bf95ed, type: 3}
       propertyPath: m_Name
       value: UI Bubble

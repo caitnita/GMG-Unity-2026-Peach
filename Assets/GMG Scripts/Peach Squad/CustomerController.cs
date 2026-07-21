@@ -107,18 +107,18 @@ public class CustomerController : InteractableObject
             newImage.tag = tagName;
         }
 
-        var cellSize = 100f;
-        if (order.Count > 12)
+        var cellSize = 55f;
+        if (order.Count >= 15)
         {
-            cellSize = 25;
+            cellSize = 30;
         }
-        else if (order.Count > 9)
+        else if (order.Count >= 9)
         {
-            cellSize = 50;
+            cellSize = 40;
         }
-        else if (order.Count > 4)
+        else if (order.Count >= 4)
         {
-            cellSize = 75f;
+            cellSize = 50f;
         }
         else { }
         uiBubble.cellSize = new Vector2(cellSize, cellSize);
