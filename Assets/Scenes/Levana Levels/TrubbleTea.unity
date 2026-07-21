@@ -3559,7 +3559,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ef6244fb14fde49a88d9375bd48ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseButton: 0
+  pauseMenu: {fileID: 0}
   isPaused: 0
+  isStopped: 0
 --- !u!4 &2116123789
 Transform:
   m_ObjectHideFlags: 0
@@ -3616,6 +3619,8 @@ MonoBehaviour:
   defaultMaxPatience: 30
   minPatience: 5
   patienceDecrease: 1
+  successSprite: {fileID: 0}
+  failSprite: {fileID: 0}
 --- !u!114 &2116123791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3628,6 +3633,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ec07ae697f00144bb3a53fc61c0f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  healthUI: {fileID: 0}
+  healthImage: {fileID: 0}
   ordersCompleted: 0
   ordersFailed: 0
   difficultyModifier: 1
