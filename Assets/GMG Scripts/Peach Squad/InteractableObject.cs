@@ -84,7 +84,11 @@ public class InteractableObject : MonoBehaviour
 
     public void OnPause(bool pause)
     {
-        if (pause) audioSrc.Stop();
+        if (audioSrc)
+        {
+            if (pause) audioSrc.Stop();
+        }
+        else { }
     }
 
     // Check for trigger enters that match either the "Player" tag or the "InteractBox" name.

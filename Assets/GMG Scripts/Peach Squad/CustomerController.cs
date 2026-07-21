@@ -14,7 +14,7 @@ public class CustomerController : InteractableObject
 
     // We'll store the spawn location of the customer as a float for later.
     [HideInInspector]
-    public float spawnLocation;
+    public int spawnLocation;
 
     // A gameobject that will visualize our customer's patience for us
     public Image patienceBar;
@@ -55,6 +55,9 @@ public class CustomerController : InteractableObject
     public GridLayoutGroup uiBubble;
     public Image image;
 
+    private string tagName;
+    private Vector2 cachedCellSize;
+
     // We're overriding the Start() function in our base InteractableObject class...
     protected override void Start()
     {
@@ -66,6 +69,9 @@ public class CustomerController : InteractableObject
         // We'll get our necessary components and scripts connected to the right places
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        tagName = "Customer" + spawnLocation + "Order";
+        cachedCellSize = uiBubble.cellSize;
 
         if (customer != null)
         {
@@ -98,6 +104,7 @@ public class CustomerController : InteractableObject
             var newImage = Instantiate(image, uiBubble.gameObject.transform);
             newImage.sprite = order[i].sprite;
             newImage.name = order[i].name;
+            newImage.tag = tagName;
         }
 
         var cellSize = 100f;
@@ -150,10 +157,8 @@ public class CustomerController : InteractableObject
             // Else (if patience is at zero or less) AND we're not already leaving
             else if (!isLeaving)
             {
-                StartCoroutine(Leave());
                 Debug.Log(this.gameObject.name + " is out of patience!");
-                PlaySound(customer.failureSound);
-                difficultyManager.FailOrder();
+                FailOrder();
             }
         }
         else { }
@@ -172,24 +177,13 @@ public class CustomerController : InteractableObject
             if (CheckOrder())
             {
                 Debug.Log("Correct order!");
-
-                PlaySound(customer.successSound);
-
-                // Tell the difficulty manager!
-                difficultyManager.CompleteOrder();
+                SucceedOrder();
             }
             else
             {
                 Debug.Log("Wrong order!");
-
-                PlaySound(customer.failureSound);
-
-                // Tell the difficulty manager!
-                difficultyManager.FailOrder();
+                FailOrder();
             }
-            // After checking the order, this customer needs to wrap it up!
-            StartCoroutine(Leave());
-
             // If the player checked the order, their inventory should be cleared.
             playerInventory.ClearInventory();
         }
@@ -220,6 +214,53 @@ public class CustomerController : InteractableObject
             }
             // If there's no mismatches, the order is correct!
             return true;
+        }
+    }
+
+    public void FailOrder()
+    {
+        if (customerManager.failSprite)
+        {
+            ClearOrder();
+            var newImage = Instantiate(image, uiBubble.gameObject.transform);
+            newImage.tag = tagName;
+            newImage.sprite = customerManager.failSprite;
+        }
+        else { }
+
+        PlaySound(customer.failureSound);
+
+        // Tell the difficulty manager!
+        difficultyManager.FailOrder();
+        
+        StartCoroutine(Leave());
+    }
+
+    public void SucceedOrder()
+    {
+        if (customerManager.successSprite)
+        {
+            ClearOrder();
+            var newImage = Instantiate(image, uiBubble.gameObject.transform);
+            newImage.tag = tagName;
+            newImage.sprite = customerManager.successSprite;
+        }
+        else { }
+
+        PlaySound(customer.successSound);
+        
+        // Tell the difficulty manager!
+        difficultyManager.CompleteOrder();
+
+        StartCoroutine(Leave());
+    }
+
+    private void ClearOrder()
+    {
+        var items = GameObject.FindGameObjectsWithTag(tagName);
+        foreach (var item in items)
+        {
+            Destroy(item);
         }
     }
 

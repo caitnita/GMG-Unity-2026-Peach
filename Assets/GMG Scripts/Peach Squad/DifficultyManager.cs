@@ -1,8 +1,15 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DifficultyManager : MonoBehaviour
 {
     // This manager script will count our completed/failed orders, and hold information on difficulty phases.
+    [Header("Life System")]
+    public int maxHealth = 0;
+    private int currHealth;
+    public GameObject healthUI;
+    public Image healthImage;
 
     [Header("Order Counters")]
     // How many orders has the player successfully completed?
@@ -30,10 +37,36 @@ public class DifficultyManager : MonoBehaviour
     public int difficultyPhaseCounter = 1;
 
     private CustomerManager customerManager;
+    private GameManager gameManager;
+    private GameState gameState;
 
     private void Start()
     {
         customerManager = GetComponent<CustomerManager>();
+        gameManager = GetComponent<GameManager>();
+
+        // At the start of the level, set our current health equal to our defined max health value.
+        currHealth = maxHealth;
+
+        // Clear any current healthUI children
+        ClearHealthBar();
+
+        // Spawn number of health images equal to current health
+        if (currHealth > 0)
+        {
+            for (int i = 0; i < currHealth; i++)
+            {
+                Instantiate(healthImage, healthUI.gameObject.transform);
+            }
+        }
+        else { }
+
+        GameObject sceneManager = GameObject.Find("SceneManager");
+        if (sceneManager)
+        {
+            gameState = sceneManager.GetComponent<GameState>();
+        }
+        else { }
     }
 
     // We will call this from our customer game objects when an order is completed.
@@ -86,5 +119,51 @@ public class DifficultyManager : MonoBehaviour
         // Increase our failed order counter by one.
         ordersFailed++;
         Debug.Log("Orders failed: " + ordersFailed);
+        Debug.Log("Current health: " + currHealth + " -> " + (currHealth-1));
+
+        // Whenever we fail an order, subtract 1 from our current health.
+        // Update health UI to current health.
+        currHealth--;
+        if (healthUI.transform.childCount > 0)
+        {
+            DestroyImmediate(healthUI.transform.GetChild(0).gameObject);
+        }
+        else { }
+
+        // Play spooky sound or event depending on remaining health
+
+        if (currHealth == 0)
+        {
+            StartCoroutine(EndGame());
+        }
+        else if (currHealth < 0)
+        {
+            // If we never set a max health before the game, we'll bypass the above check by our health value being at -1.
+            currHealth = 0;
+        }
+        else { }
+    }
+
+    IEnumerator EndGame()
+    { 
+        Debug.Log("Game over!");
+        gameManager.StopGame();
+        yield return new WaitForSecondsRealtime(2f);
+        if (gameState)
+        {
+            gameState.LoadScene();
+        }
+        else
+        {
+            Debug.Log("Load next scene...");
+        }
+    }
+
+    void ClearHealthBar()
+    {
+        while (healthUI.transform.childCount > 0)
+        {
+            DestroyImmediate(healthUI.transform.GetChild(0).gameObject);
+        }
     }
 }

@@ -9,6 +9,9 @@ TagManager:
   - SceneManager
   - GameManager
   - InventoryItem
+  - Customer1Order
+  - Customer2Order
+  - Customer3Order
   layers:
   - Default
   - TransparentFX

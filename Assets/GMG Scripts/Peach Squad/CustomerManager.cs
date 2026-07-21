@@ -65,6 +65,10 @@ public class CustomerManager : MonoBehaviour
     public float patienceDecrease = 1f;
     private float currMaxPatience;
 
+    [Header("Success/Fail images")]
+    public Sprite successSprite;
+    public Sprite failSprite;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -167,7 +171,7 @@ public class CustomerManager : MonoBehaviour
         else { }
     }
 
-    public void Spawn(float location)
+    public void Spawn(int location)
     {
         // Create a local variable to hold the game object we're using to set the location of each spawn point
         GameObject spawnLocationObject = null;
@@ -209,21 +213,21 @@ public class CustomerManager : MonoBehaviour
         customerSpawn.SetActive(true);
     }
 
-    public void EmptySlot(float location)
+    public void EmptySlot(int location)
     {
-        if (location == 1f)
+        if (location == 1)
         {
             // For the corresponding location, reset the occupied boolean to false,
             // and reset the timer back to the maximum time.
             spawn1Occupied = false;
             spawn1Timer = spawnTime;
         }
-        else if (location == 2f)
+        else if (location == 2)
         {
             spawn2Occupied = false;
             spawn2Timer = spawnTime;
         }
-        else if (location == 3f)
+        else if (location == 3)
         {
             spawn3Occupied = false;
             spawn3Timer = spawnTime;

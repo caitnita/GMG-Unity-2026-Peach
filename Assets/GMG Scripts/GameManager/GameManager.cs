@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class GameSettings
@@ -17,6 +18,12 @@ public class GameManager : MonoBehaviour {
 
 	private static GameManager gameMgr;
     public GameSettings Settings{ get; private set; }
+
+    public InputManager.InputButton pauseButton;
+    public GameObject pauseMenu;
+
+    private float unpauseDelayTime = 1;
+    private bool unpauseDelay = false;
 
     public static GameManager Inst()
 	{
@@ -44,10 +51,40 @@ public class GameManager : MonoBehaviour {
 	}
 
     public bool isPaused = false;
+    public bool isStopped = false;
     public delegate void PauseHandler(bool pause);
     public event PauseHandler onPause;
-    public void PauseGame() 		{isPaused = true; Time.timeScale = 0; if (onPause != null) onPause(true);}
-    public void UnpauseGame() 	{isPaused = false; Time.timeScale = 1; if (onPause != null) onPause(false);}
+    public void PauseGame()
+    {
+        isPaused = true;
+        Time.timeScale = 0;
+        if (onPause != null) onPause(true);
+        Cursor.visible = true;
+        if (pauseMenu)
+        {
+            pauseMenu.SetActive(true);
+        }
+    }
+    public void UnpauseGame()
+    {
+        isPaused = false;
+        Time.timeScale = 1;
+        if (onPause != null) onPause(false);
+        Cursor.visible = false;
+        if (pauseMenu){
+            pauseMenu.SetActive(false);
+        }
+        StopCoroutine(UnpauseDelay());
+        unpauseDelay = false;
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    public void StopGame()
+    {
+        isPaused = true;
+        isStopped = true;
+        Time.timeScale = 0;
+    }
 
     //Getters
     	InputManager inputMgr;
@@ -80,11 +117,35 @@ public class GameManager : MonoBehaviour {
     	
 	// Use this for initialization
 	void Start () {
-		
+        Cursor.visible = false;
+        if (pauseMenu)
+        {
+            pauseMenu.gameObject.SetActive(false);
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        // When our selected input button is pressed...
+        if (inputMgr.GetKeyDown(pauseButton))
+        {
+            if (!isPaused)
+            {
+                PauseGame();
+                StartCoroutine(UnpauseDelay());
+            }
+            else if ((isPaused)&&(!unpauseDelay)&&(!isStopped))
+            {
+                UnpauseGame();
+            }
+        }
+        else { }
+    }
+
+    IEnumerator UnpauseDelay()
+    {
+        unpauseDelay = true;
+        yield return new WaitForSecondsRealtime(unpauseDelayTime);
+        unpauseDelay = false;
+    }
 }

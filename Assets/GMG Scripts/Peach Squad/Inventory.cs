@@ -56,6 +56,7 @@ public class Inventory : MonoBehaviour
         inventory.Add(ingredient);
         var newImage = Instantiate(image, uiBubble.gameObject.transform);
         newImage.sprite = ingredient.sprite;
+        newImage.name = ingredient.name;
 
         var cellChangeAmt = 5f;
         if (inventory.Count > 12)
@@ -68,7 +69,7 @@ public class Inventory : MonoBehaviour
         }
         else { }
 
-            cellChange = new Vector2(cellChangeAmt, cellChangeAmt);
+        cellChange = new Vector2(cellChangeAmt, cellChangeAmt);
         uiBubble.cellSize -= cellChange;
     }
 
