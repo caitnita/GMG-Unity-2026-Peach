@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44818c82ca15e3f4e92dbf793297eab1, type: 3}
-  m_Name: Milk
+  m_Name: BlackTea
   m_EditorClassIdentifier: 
-  ingredientName: milk
-  sprite: {fileID: -1270838226611166008, guid: d8523e51383564851ab304aa54d1265a, type: 3}
-  sound: {fileID: 8300000, guid: 9e561388c49448a4690acaf37e67ef91, type: 3}
+  ingredientName: blackTea
+  sprite: {fileID: 7599604188096407662, guid: 03790d91dc77f9b4e9a1861d81ad98f6, type: 3}
+  sound: {fileID: 8300000, guid: 4514fb9a7db758941a79bc8bd59e07dd, type: 3}
   isRequired: 0
   isUnique: 0
   isCursed: 0
