@@ -61,7 +61,7 @@ public class DifficultyManager : MonoBehaviour
         }
         else { }
 
-        GameObject sceneManager = GameObject.Find("SceneManager");
+        GameObject sceneManager = GameObject.FindGameObjectWithTag("SceneManager");
         if (sceneManager)
         {
             gameState = sceneManager.GetComponent<GameState>();

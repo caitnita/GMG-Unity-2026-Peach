@@ -23,7 +23,10 @@ public class CustomerManager : MonoBehaviour
     private List<Ingredient> ingredientPool = new List<Ingredient>();
     private List<Ingredient> cursedIngredients = new List<Ingredient>();
     private List<Ingredient> requiredIngredients = new List<Ingredient>();
-    private List<Ingredient> order = new List<Ingredient>();
+
+    [Header("Event related items")]
+    public GameObject doorObject;
+    public GameObject eyesHolder;
 
     [Header("Spawn location GameObjects")]
     public GameObject spawn1;
@@ -41,7 +44,7 @@ public class CustomerManager : MonoBehaviour
 
     [Header("Spawn time settings")]
     public float defaultSpawnTime = 10f;
-    public float spawnTimeDecrease = 1f;
+    public float spawnTimeDecrease = 0.5f;
     private float spawnTime;
     
     // The amount of time to delay at the beginning of the game before spawning the first customer
@@ -56,6 +59,7 @@ public class CustomerManager : MonoBehaviour
     public float orderSizeIncrease = 1f;
     private float currOrderSizeMin;
     private float currOrderSizeMax;
+    private float currOrderSizeMaxUnrounded;
     private float orderSize;
 
     [Header("Patience settings")]
@@ -121,7 +125,12 @@ public class CustomerManager : MonoBehaviour
             }
         }
 
-        Phase1();   
+        if (eyesHolder)
+        {
+            eyesHolder.SetActive(false);
+        }
+
+        Phase1();
     }
 
     // Update is called once per frame
@@ -200,7 +209,7 @@ public class CustomerManager : MonoBehaviour
         customerSpawn.SetActive(false);
 
         // Get the customer controller script on the newly created game object
-        CustomerController customerController = customerSpawn.GetComponent<CustomerController>();
+        CustomerController customerController = customerSpawn.transform.Find("Customer").GetComponent<CustomerController>();
 
         // Set the Customer scriptable object on the game object to a random one from our customer pool,
         // and assign the correct spawn location.
@@ -252,6 +261,7 @@ public class CustomerManager : MonoBehaviour
         spawnTime = defaultSpawnTime;
         currOrderSizeMax = defaultOrderSizeMax;
         currOrderSizeMin = defaultOrderSizeMin;
+        currOrderSizeMaxUnrounded = defaultOrderSizeMax;
         currMaxPatience = defaultMaxPatience;
 
         spawn1Timer = startSpawnDelay;
@@ -268,7 +278,14 @@ public class CustomerManager : MonoBehaviour
         // Multiply current spawn time by 2, now that we have 2 spawns
         spawnTime *= 2f;
 
+        // Allow a customer to be spawned in slot 2
+        spawn2Occupied = false;
+
         // Change any on screen effects, or music effects
+        if (doorObject)
+        {
+            doorObject.GetComponent<ReplaceSprite>().Replace();
+        }
     }
 
     public void Phase3()
@@ -281,22 +298,29 @@ public class CustomerManager : MonoBehaviour
         customerPool.AddRange(cursedCustomers);
         customerPool.AddRange(cursedCustomers);
 
-        // Multiply current spawn time by 1.5, now that we have 3 spawns
-        spawnTime *= 1.5f;
+        // Multiply current spawn time by 3, now that we have 3 spawns
+        spawnTime *= 3f;
+
+        // Allow a customer to be spawned in slot 3
+        spawn3Occupied = false;
 
         // Change any on screen effects, or music effects
+        if (eyesHolder)
+        {
+            eyesHolder.SetActive(true);
+        }
     }
 
     private List<Ingredient> CreateOrder(int customerType)
     {
         // Clear any previous order info
-        order.Clear();
+        var orderNew = new List<Ingredient>();
 
         // Set our working ingredient pool back to default
-        List<Ingredient> currIngredientPool = new List<Ingredient>(ingredientPool);
+        var currIngredientPool = new List<Ingredient>(ingredientPool);
 
         // Add all required items to the order.
-        order.AddRange(requiredIngredients);
+        orderNew.AddRange(requiredIngredients);
         orderSize = Random.Range(currOrderSizeMin, currOrderSizeMax);
 
         // If customer is creepy type...
@@ -316,10 +340,10 @@ public class CustomerManager : MonoBehaviour
         }
         else { }
 
-        for (var i = order.Count; i < orderSize; i++)
+        for (var i = orderNew.Count; i < orderSize; i++)
         {
             var item = Random.Range(0, currIngredientPool.Count);
-            order.Add(currIngredientPool[item]);
+            orderNew.Add(currIngredientPool[item]);
 
             // If the ingredient is unique...
             if (currIngredientPool[item].isUnique)
@@ -330,14 +354,15 @@ public class CustomerManager : MonoBehaviour
             else { }
         }
 
-        return order;
+        return orderNew;
     }
 
     public void IncreaseOrderSize()
     {
         // Increase the minimum order size by the listed amount, but increase the maximum by the listed amount times a factor of 1.5
         currOrderSizeMin += orderSizeIncrease;
-        currOrderSizeMax += Mathf.Floor(orderSizeIncrease*1.5f);
+        currOrderSizeMaxUnrounded += (orderSizeIncrease * 1.5f);
+        currOrderSizeMax = Mathf.Floor(currOrderSizeMaxUnrounded);
     }
 
     public void DecreaseTimers()
@@ -345,7 +370,7 @@ public class CustomerManager : MonoBehaviour
         // If our spawn time is greater than 1, recalculate using our number of orders completed, and softening by number of orders failed
         if (spawnTime > 1)
         {
-            spawnTime -= spawnTimeDecrease * difficultyManager.ordersCompleted / (difficultyManager.ordersFailed+1);
+            spawnTime -= spawnTimeDecrease / (difficultyManager.ordersFailed + 1);
         }
         else { }
 
@@ -359,7 +384,7 @@ public class CustomerManager : MonoBehaviour
         // If our maximum patience is greater than the minimum, recalculate using our number of orders completed, and softening by number of orders failed
         if (currMaxPatience > minPatience)
         {
-            currMaxPatience -= patienceDecrease * difficultyManager.ordersCompleted / (difficultyManager.ordersFailed + 1);
+            currMaxPatience -= patienceDecrease / (difficultyManager.ordersFailed + 1);
         }
 
         // If we go below our minimum patience after the above, reset it back to the minimum.

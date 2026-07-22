@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -34,6 +35,19 @@ public class GameState : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            StartCoroutine(EscapeKeyHeld());
+        }
+        
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            StopAllCoroutines();
+        }
+    }
+
     // Load scenes by reference in Scene List.
     // 0: Main Menu
     // 1: Cutscenes
@@ -51,7 +65,7 @@ public class GameState : MonoBehaviour
         Debug.Log("Load next scene! :)");
         if (gameState == 0)
         {
-            gameState = 2;
+            gameState++;
             SceneManager.LoadScene(1);
         }
         else if (gameState == 1)
@@ -76,9 +90,21 @@ public class GameState : MonoBehaviour
         }
     }
 
+    public void RestartGame()
+    {
+        gameState = 1;
+        LoadScene();
+    }
+
     public void ExitGame()
     {
         Application.Quit();
         Debug.Log("I'm quitting the game :D");
+    }
+
+    IEnumerator EscapeKeyHeld()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        ExitGame();
     }
 }

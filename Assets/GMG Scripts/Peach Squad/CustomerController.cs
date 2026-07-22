@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.WebSockets;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -136,14 +137,25 @@ public class CustomerController : InteractableObject
                 // Decrease patience by Time.deltaTime
                 patience -= Time.deltaTime;
 
-                // Set our patienceBarScale x value to our percentage of remaining patience
-                patienceBarScale.x = patience / patienceMax;
 
-                // Update the transform scale of the patienceBar UI image to our private Vector
-                patienceBar.transform.localScale = patienceBarScale;
+                if (patienceBar.type == Image.Type.Simple)
+                {
+                    // Set our patienceBarScale x value to our percentage of remaining patience
+                    patienceBarScale.x = patience / patienceMax;
 
-                // Update the color of the patienceBar image using our Gradient Color Key
-                patienceBar.color = gradient.Evaluate(patience / patienceMax);
+                    // Update the transform scale of the patienceBar UI image to our private Vector
+                    patienceBar.transform.localScale = patienceBarScale;
+                }else if (patienceBar.type == Image.Type.Filled)
+                {
+                    patienceBar.fillAmount = patience / patienceMax;
+                }
+                else
+                {
+                    Debug.Log("Patience bar not updating, Image type needs to be Simple or Filled");
+                }
+
+                    // Update the color of the patienceBar image using our Gradient Color Key
+                    patienceBar.color = gradient.Evaluate(patience / patienceMax);
 
                 // If we haven't played the patience sound yet,
                 // AND our current patience is less than half our maximum patience...
@@ -202,7 +214,21 @@ public class CustomerController : InteractableObject
         }
         else
         {
-            // If the lengths match, check each item in both lists against eachother to see if they match.
+            foreach (var item in order)
+            {
+                if (inventory.Contains(item))
+                {
+                    inventory.Remove(item);
+                }
+                else
+                {
+                    // If no matching entry, order is wrong.
+                    return false;
+                }
+            }
+            return true;
+            /*
+            // Then check each item in both lists against eachother to see if they match.
             for (int i = 0; i < order.Count; i++)
             {
                 if (order[i] != inventory[i])
@@ -214,6 +240,7 @@ public class CustomerController : InteractableObject
             }
             // If there's no mismatches, the order is correct!
             return true;
+            */
         }
     }
 
@@ -262,6 +289,8 @@ public class CustomerController : InteractableObject
         {
             Destroy(item);
         }
+
+        uiBubble.cellSize = new Vector2(100, 100);
     }
 
     IEnumerator Leave()

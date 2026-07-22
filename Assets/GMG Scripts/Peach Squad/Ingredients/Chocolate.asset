@@ -13,8 +13,15 @@ MonoBehaviour:
   m_Name: Chocolate
   m_EditorClassIdentifier: 
   ingredientName: chocolate
+<<<<<<< Updated upstream
   sprite: {fileID: 3830898321858223139, guid: ecef084a46066a14ab95c7d9229d41b9, type: 3}
   sound: {fileID: 8300000, guid: dc525ae932ce00e4baab02d16f5102bc, type: 3}
   isRequired: 1
   isUnique: 1
+=======
+  sprite: {fileID: -5942736135277841449, guid: f8146192f0c56194282858b838a8cd0d, type: 3}
+  sound: {fileID: 8300000, guid: 5e4e1fe5bc99afa438bd98802df4a990, type: 3}
+  isRequired: 0
+  isUnique: 0
+>>>>>>> Stashed changes
   isCursed: 0

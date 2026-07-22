@@ -16,5 +16,5 @@ MonoBehaviour:
   sprite: {fileID: 4368363140937295827, guid: 9cda7af1c567a534f96ae9147c10f875, type: 3}
   sound: {fileID: 8300000, guid: f54e87feeb53bb54288d7bd320f56506, type: 3}
   isRequired: 0
-  isUnique: 0
+  isUnique: 1
   isCursed: 0

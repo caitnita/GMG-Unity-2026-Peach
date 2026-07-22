@@ -15,6 +15,7 @@ public class InteractableObject : MonoBehaviour
 
     GameObject player;
     protected Inventory playerInventory;
+    Material material;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
@@ -30,6 +31,8 @@ public class InteractableObject : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerInventory = player.GetComponent<Inventory>();
         interactButton = playerInventory.interactButton;
+
+        material = GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -95,9 +98,11 @@ public class InteractableObject : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log(this.gameObject.name +"+"+collision.gameObject.name);
-        if ((collision.gameObject.name == "InteractBox")||(collision.gameObject.CompareTag("Player")))
+        if ((collision.gameObject.name == "InteractBox")||(collision.gameObject.CompareTag("Player")) && (!gameMgr.playerOccupied))
         {
+            gameMgr.playerOccupied = true;
             onPlayer = true;
+            material.SetFloat("_Outline", 1);
         }
         else { }
     }
@@ -107,7 +112,9 @@ public class InteractableObject : MonoBehaviour
     {
         if ((onPlayer) && ((collision.gameObject.name == "InteractBox") || (collision.gameObject.CompareTag("Player"))))
         {
+            gameMgr.playerOccupied = false;
             onPlayer = false;
+            material.SetFloat("_Outline", 0);
         }
         else { }
     }

@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour {
     private float unpauseDelayTime = 1;
     private bool unpauseDelay = false;
 
+    public bool playerOccupied = false;
+
     public static GameManager Inst()
 	{
 		if (gameMgr != null) return gameMgr;
