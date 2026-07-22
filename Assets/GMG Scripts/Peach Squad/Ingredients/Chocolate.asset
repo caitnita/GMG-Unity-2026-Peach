@@ -15,6 +15,6 @@ MonoBehaviour:
   ingredientName: chocolate
   sprite: {fileID: -5942736135277841449, guid: f8146192f0c56194282858b838a8cd0d, type: 3}
   sound: {fileID: 8300000, guid: 5e4e1fe5bc99afa438bd98802df4a990, type: 3}
-  isRequired: 1
-  isUnique: 1
+  isRequired: 0
+  isUnique: 0
   isCursed: 0

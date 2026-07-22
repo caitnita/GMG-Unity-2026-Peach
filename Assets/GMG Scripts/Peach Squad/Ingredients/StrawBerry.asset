@@ -15,6 +15,6 @@ MonoBehaviour:
   ingredientName: strawberry
   sprite: {fileID: -283529460525937575, guid: feb020b368021344db1253672a133bb4, type: 3}
   sound: {fileID: 8300000, guid: 6f9e75726d8d0a245b59addf1dada916, type: 3}
-  isRequired: 1
-  isUnique: 1
+  isRequired: 0
+  isUnique: 0
   isCursed: 0
