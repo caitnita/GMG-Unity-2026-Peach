@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3afa6bc29c8dc6542980b789c9c15bdd, type: 3}
-  m_Name: CreepyPlaceholder
+  m_Name: CuteCust1
   m_EditorClassIdentifier: 
-  customerName: Creepy Placeholder
-  sprite: {fileID: 8621175409208223273, guid: 2a5f89b0dffec994193ba8fa80221822, type: 3}
+  customerName: Cute Placeholder
+  sprite: {fileID: -3558552238673493281, guid: 40063d58eb5d72b47b600146c3768fe5, type: 3}
   animator: {fileID: 0}
-  customerType: 2
+  customerType: 1
   spawnSound: {fileID: 8300000, guid: fc7dd54c466d08f4e8f2b3796baa701f, type: 3}
   successSound: {fileID: 8300000, guid: add59b644885ec7448103a3570452980, type: 3}
   failureSound: {fileID: 8300000, guid: 285c58ebf35a39f4d9e132d53ec84f16, type: 3}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3afa6bc29c8dc6542980b789c9c15bdd, type: 3}
-  m_Name: CutePlaceholder
+  m_Name: CuteCust2
   m_EditorClassIdentifier: 
   customerName: Cute Placeholder
   sprite: {fileID: -6989495785908772370, guid: 55e5cb76b079873439945484ef0cde53, type: 3}

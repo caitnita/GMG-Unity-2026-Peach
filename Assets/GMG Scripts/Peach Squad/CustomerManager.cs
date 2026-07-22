@@ -246,8 +246,7 @@ public class CustomerManager : MonoBehaviour
 
     public Customer GetCustomer()
     {
-        return customerPool[customerPool.Count-1];
-        //return customerPool[Random.Range(0, customerPool.Count)];
+        return customerPool[Random.Range(0, customerPool.Count)];
     }
 
     public void Phase1()

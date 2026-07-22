@@ -179,7 +179,7 @@ public class CustomerController : InteractableObject
     // We're overriding the Action() function in our base InteractableObject class
     public override void Action()
     {
-        Debug.Log("Action");
+        //Debug.Log("Action");
         // Check the player's inventory
         inventory = playerInventory.inventory;
 
