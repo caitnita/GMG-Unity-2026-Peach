@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -27,6 +28,12 @@ public class CustomerManager : MonoBehaviour
     [Header("Event related items")]
     public GameObject doorObject;
     public GameObject eyesHolder;
+    public Image overlay;
+    private Material overlayMaterial;
+    public GameObject windowObject;
+    public Sprite windowDay;
+    public Sprite windowEvening;
+    public Sprite windowNight;
 
     [Header("Spawn location GameObjects")]
     public GameObject spawn1;
@@ -78,6 +85,15 @@ public class CustomerManager : MonoBehaviour
     {
         difficultyManager = GetComponent<DifficultyManager>();
         gameManager = GetComponent<GameManager>();
+
+        if (overlay != null)
+        {
+            overlayMaterial = overlay.material;
+        }
+        else { }
+        SetMaterial(overlayMaterial, new Color32(255, 187, 94, 255), 0.11f, 2.9f);
+
+        windowObject.GetComponent<SpriteRenderer>().sprite = windowDay;
 
         spawn1Occupied = true;
         spawn2Occupied = true;
@@ -285,6 +301,10 @@ public class CustomerManager : MonoBehaviour
         {
             doorObject.GetComponent<ReplaceSprite>().Replace();
         }
+
+        SetMaterial(overlayMaterial, new Color32(168, 74, 43, 255), 0.7f, 1.3f);
+
+        windowObject.GetComponent<SpriteRenderer>().sprite = windowEvening;
     }
 
     public void Phase3()
@@ -308,6 +328,10 @@ public class CustomerManager : MonoBehaviour
         {
             eyesHolder.SetActive(true);
         }
+
+        SetMaterial(overlayMaterial, new Color32(0, 5, 131, 255), 0.6f, 1.3f);
+
+        windowObject.GetComponent<SpriteRenderer>().sprite = windowNight;
     }
 
     private List<Ingredient> CreateOrder(int customerType)
@@ -390,6 +414,17 @@ public class CustomerManager : MonoBehaviour
         if (currMaxPatience < minPatience)
         {
             currMaxPatience = minPatience;
+        }
+        else { }
+    }
+
+    public void SetMaterial(Material material,Color color,float opacity,float mix)
+    {
+        if (overlayMaterial != null)
+        {
+            material.SetColor("_Color", color);
+            material.SetFloat("_Opacity", opacity);
+            material.SetFloat("_Mix", mix);
         }
         else { }
     }

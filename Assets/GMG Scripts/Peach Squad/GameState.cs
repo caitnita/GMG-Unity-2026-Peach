@@ -52,14 +52,15 @@ public class GameState : MonoBehaviour
     // 0: Main Menu
     // 1: Cutscenes
     // 2: Main Game Level
-    // 3: Credits
+    // 3: Game over
+    // 4: Credits
 
     // Game States:
     // 0: Main menu
     // 1: Cutscene 1
     // 2: Main game
     // 3: Cutscene 2
-    // 4: Game over/credits
+    // 4: Game over
     public void LoadScene()
     {
         Debug.Log("Load next scene! :)");
@@ -100,6 +101,31 @@ public class GameState : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("I'm quitting the game :D");
+    }
+
+    public void Credits()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            // Return to correct scene
+            if (gameState == 0)
+            {
+                SceneManager.LoadScene(0);
+            }
+            else if (gameState == 4)
+            {
+                SceneManager.LoadScene(3);
+            }
+            else
+            {
+                Debug.Log("Wrong game state value");
+            }
+        }
+        else
+        {
+            // Go to credits
+            SceneManager.LoadScene(4);
+        } 
     }
 
     IEnumerator EscapeKeyHeld()

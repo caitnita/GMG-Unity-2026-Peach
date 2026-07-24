@@ -8,6 +8,7 @@ public class ButtonActionAssign : MonoBehaviour
     public bool isLoadGame;
     public bool isLoadScene;
     public bool isQuit;
+    public bool isCredits;
     private Button button;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,6 +29,10 @@ public class ButtonActionAssign : MonoBehaviour
         {
             button.onClick.AddListener(Quit);
         }
+        else if (isCredits)
+        {
+            button.onClick.AddListener(Credits);
+        }
     }
 
     void Restart()
@@ -43,5 +48,10 @@ public class ButtonActionAssign : MonoBehaviour
     private void Quit()
     {
         gameState.ExitGame();
+    }
+
+    private void Credits()
+    {
+        gameState.Credits();
     }
 }

@@ -119,6 +119,9 @@ public class GameManager : MonoBehaviour {
     	
 	// Use this for initialization
 	void Start () {
+        isPaused = false;
+        isStopped = false;
+        Time.timeScale = 1;
         Cursor.visible = false;
         if (pauseMenu)
         {
